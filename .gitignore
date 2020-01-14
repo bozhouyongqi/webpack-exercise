@@ -1,4 +1,9 @@
 npm-debug.log
-webpack3/mode_modules
+webpack3/node_modules
+webpack3/.DS_Store
+webpack3/dist
+
 webpack4/node_modules
+webpack4/.DS_Store
+webpack4/dist
 
