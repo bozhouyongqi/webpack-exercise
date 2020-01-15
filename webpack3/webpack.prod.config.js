@@ -7,8 +7,6 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 清空打包目录的插件
-
 
 module.exports = {
     entry: {
@@ -49,13 +47,7 @@ module.exports = {
             minify: {
                 removeAttributeQuotes: true // 压缩 去掉引号
             }
-        }),
-        new CleanWebpackPlugin()
-    ],
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        // compress: true,
-        port: 8000
-    }
+        })
+    ]
 };
 
