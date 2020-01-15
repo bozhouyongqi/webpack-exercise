@@ -21,7 +21,23 @@ module.exports = {
     },
     module: {
         rules: [
-
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                include: path.resolve('src'),
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react'
+                        ],
+                        plugins: [
+                            '@babel/plugin-syntax-dynamic-import'
+                        ]
+                    }
+                }
+            }
         ]
     },
     plugins: [
@@ -35,7 +51,11 @@ module.exports = {
             }
         }),
         new CleanWebpackPlugin()
-    ]
-
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        // compress: true,
+        port: 8000
+    }
 };
 
