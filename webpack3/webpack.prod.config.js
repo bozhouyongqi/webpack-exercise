@@ -69,7 +69,8 @@ module.exports = {
         new CleanWebpackPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             test: /\.js(\?.*)?$/i,
-            cache: true
+            cache: true,
+            sourceMap: true
         })
     ],
     devtool: 'source-map'
