@@ -2,7 +2,7 @@
 
 ### webpack4升级初体验
 
-#### webpack4改动点 [https://v4.webpack.js.org/migrate/4/](http://)
+#### webpack4改动点 [https://v4.webpack.js.org/migrate/4/](http://https://v4.webpack.js.org/migrate/4/)
 
 ```
 1. 不再支持node v4,需要更新到node v6版本或者更高
@@ -257,4 +257,15 @@ index.cf402c.js.map   5.51 MiB       0  [emitted] [dev]               index
 
 ### 其他构建优化方法(以webpack4为例)
 
-#### splitChunks
+#### splitChunks抽离公共代码
+[https://juejin.im/post/5c00916f5188254caf186f80](https://juejin.im/post/5c00916f5188254caf186f80)
+
+
+参考文章
+[http://louiszhai.github.io/2019/01/04/webpack4/#%E6%8C%81%E7%BB%AD%E5%8A%A0%E9%80%9F](http://louiszhai.github.io/2019/01/04/webpack4/#%E6%8C%81%E7%BB%AD%E5%8A%A0%E9%80%9F)
+
+
+[https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a](https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a)
+
+
+
