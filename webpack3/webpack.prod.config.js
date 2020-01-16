@@ -8,6 +8,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 清空打包目录的插件
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -65,8 +66,12 @@ module.exports = {
                 removeAttributeQuotes: true // 压缩 去掉引号
             }
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            test: /\.js(\?.*)?$/i,
+            cache: true
+        })
     ],
-    devtool: 'sourcemap'
+    devtool: 'source-map'
 };
 

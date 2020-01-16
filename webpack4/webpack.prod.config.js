@@ -69,6 +69,6 @@ module.exports = {
         }),
         new CleanWebpackPlugin()
     ],
-    devtool: 'sourcemap'
+    devtool: 'source-map'
 };
 
