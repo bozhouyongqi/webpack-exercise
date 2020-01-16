@@ -1,4 +1,6 @@
 npm-debug.log
+.DS_Store
+
 webpack3/node_modules
 webpack3/.DS_Store
 webpack3/dist

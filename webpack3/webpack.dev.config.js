@@ -21,6 +21,22 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.styl$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                require('autoprefixer')()
+                            ]
+                        }
+                    },
+                    'stylus-loader'
+                ]
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 include: path.resolve('src'),
@@ -55,7 +71,9 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         // compress: true,
-        port: 8000
-    }
+        port: 8000,
+        open: true
+    },
+    devtool: 'sourcemap'
 };
 
