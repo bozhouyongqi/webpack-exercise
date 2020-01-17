@@ -263,6 +263,23 @@ index.cf402c.js.map   5.51 MiB       0  [emitted] [dev]               index
 
 #### DllPlugin/DllReferencePlugin
 
+dev-server启动
+```
+splitChunks.
+Version: webpack 4.41.5
+Time: 6470ms
+
+dll
+Version: webpack 4.41.5
+Time: 4753ms
+
+构建时间提升约26%
+```
+
+#### Happypack插件
+
+
+
 
 参考文章
 [http://louiszhai.github.io/2019/01/04/webpack4/#%E6%8C%81%E7%BB%AD%E5%8A%A0%E9%80%9F](http://louiszhai.github.io/2019/01/04/webpack4/#%E6%8C%81%E7%BB%AD%E5%8A%A0%E9%80%9F)
