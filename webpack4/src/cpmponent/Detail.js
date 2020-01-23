@@ -28,6 +28,10 @@ export default class Detail extends Component {
                 data: [5, 20, 36, 10, 10, 20]
             }]
         });
+
+        import(/* webpackChunkName: "dynamicImport" */ './dynamicImport').then(module => {
+            console.log('fn ', module.default);
+        });
     };
 
     render() {
