@@ -9,6 +9,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 清空打包目录的插件
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     mode: 'development',
@@ -98,6 +99,7 @@ module.exports = {
                 removeAttributeQuotes: true // 压缩 去掉引号
             }
         }),
+        new BundleAnalyzerPlugin(),
         new CleanWebpackPlugin()
     ],
     devServer: {
