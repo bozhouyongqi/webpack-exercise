@@ -2,7 +2,7 @@
  * @Author: wangyongqi@baidu.com 
  * @Date: 2020-12-15 17:03:44 
  * @Last Modified by: wangyongqi@baidu.com
- * @Last Modified time: 2020-12-15 18:27:22
+ * @Last Modified time: 2020-12-15 19:59:39
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -25,16 +25,14 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                loader: 'loader1'
-                
-            },
-            {
-                test: /\.(js|jsx)$/,
-                loader: 'loader2'
-            },
-            {
-                test: /\.(js|jsx)$/,
-                loader: 'loader3'
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env' // 注意这里是presets选项，不是plugins选项
+                        ]
+                    }
+                }
             }
         ]
     },

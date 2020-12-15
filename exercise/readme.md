@@ -86,5 +86,13 @@ pitch-laoder的执行顺序正好跟mormal相反。[https://webpack.js.org/api/l
 - 每个loader都是无状态的，确保loader在不同模块转换之间不保存状态。即每个loader都是一个纯函数。
 
 
+#### 手写babel-loader
 
+babel-loader内部实际是使用了@babel/core库进行代码的转换，同时在babel-loader中使用@babel/preset-env库以提供统一的js语法转换支持。
+
+因为需要手动安装这两个库。
+
+```
+yarn add @babel/core @babel/preset-env -D
+```
 
