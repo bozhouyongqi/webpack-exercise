@@ -2,7 +2,7 @@
  * @Author: wangyongqi@baidu.com 
  * @Date: 2020-12-15 17:03:44 
  * @Last Modified by: wangyongqi@baidu.com
- * @Last Modified time: 2020-12-15 18:16:27
+ * @Last Modified time: 2020-12-15 18:27:22
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -25,7 +25,16 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                loader: 'addCopyright'
+                loader: 'loader1'
+                
+            },
+            {
+                test: /\.(js|jsx)$/,
+                loader: 'loader2'
+            },
+            {
+                test: /\.(js|jsx)$/,
+                loader: 'loader3'
             }
         ]
     },

@@ -65,6 +65,12 @@ module: {
 },
 ```
 
+如果有多个loader时，执行loader顺序是从下到上，从右向左执行。但是可以给loader添加enforce属性来自定义。取值有'pre'|'post',分别表示
+前置loader,后置loader。设置为pre时，即便loader写在最上面，也会先执行。还有一种是行内laoder，就是写在require()引用中的，这种执行顺序是在
+normal后的。因此整个执行顺序就是pre > normal > inline > post。
+
+
+
 
 
 
