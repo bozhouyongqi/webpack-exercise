@@ -65,11 +65,25 @@ module: {
 },
 ```
 
+#### loader的执行顺序
+
 如果有多个loader时，执行loader顺序是从下到上，从右向左执行。但是可以给loader添加enforce属性来自定义。取值有'pre'|'post',分别表示
 前置loader,后置loader。设置为pre时，即便loader写在最上面，也会先执行。还有一种是行内laoder，就是写在require()引用中的，这种执行顺序是在
 normal后的。因此整个执行顺序就是pre > normal > inline > post。
 
+例如require('-!inline-loader!./a.js');这里可以通过!的组合设置需要哪些loader处理。参见[https://webpack.js.org/concepts/loaders/#inline](https://webpack.js.org/concepts/loaders/#inline)
 
+#### pitch loader
+
+pitch-laoder的执行顺序正好跟mormal相反。[https://webpack.js.org/api/loaders/#pitching-loader](https://webpack.js.org/api/loaders/#pitching-loader)
+
+如果在当前loader的pitch loader中返回了，那么当前loader及其后面的loader都不会再执行。
+
+#### loader的特点
+- 第一个loader必须返回一个string或者buffer，且是一个可执行的js脚本。
+- 每个loader只能做一件事，从而使loader可以在更多的场景下链式调用
+- 每一个loader都是一个模块
+- 每个loader都是无状态的，确保loader在不同模块转换之间不保存状态。即每个loader都是一个纯函数。
 
 
 
