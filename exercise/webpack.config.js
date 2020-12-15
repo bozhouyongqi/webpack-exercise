@@ -2,7 +2,7 @@
  * @Author: wangyongqi@baidu.com 
  * @Date: 2020-12-15 17:03:44 
  * @Last Modified by: wangyongqi@baidu.com
- * @Last Modified time: 2020-12-15 17:46:52
+ * @Last Modified time: 2020-12-15 18:16:27
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -15,11 +15,17 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[chunkhash:6].bundle.js'
     },
+    resolveLoader: {
+        modules: ['node_modules', 'src/loaders']
+        // alias: {
+        //     addCopyright: path.resolve(__dirname, 'src/loaders', 'addCopyright')
+        // }
+    },
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                loader: path.resolve(__dirname, 'src/loaders', 'addCopyright')
+                loader: 'addCopyright'
             }
         ]
     },
