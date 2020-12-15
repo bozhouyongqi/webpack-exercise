@@ -96,3 +96,46 @@ babel-loader内部实际是使用了@babel/core库进行代码的转换，同时
 yarn add @babel/core @babel/preset-env -D
 ```
 
+webpack配置
+```
+rules: [
+        {
+            test: /\.(js|jsx)$/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-env' // 注意这里是presets选项，不是plugins选项
+                    ]
+                }
+            }
+        }
+    ]
+```
+
+babel-loader
+```
+
+const babelCore = require('@babel/core');
+// webpack5中loader中this方法内置了getOptions方法 https://webpack.js.org/api/loaders/#thisgetoptionsschema
+// const loaderUtils = require('./babel-loader');
+module.exports = function(content, map, mata) {
+
+    // 解析options选项
+    const options = this.getOptions();
+    const cb = this.async();
+
+    // https://babel.docschina.org/docs/en/babel-core/#transform
+    babelCore.transformAsync(content, {
+        ...options,
+        sourceMap: true,
+        filename: this.resourcePath.split('/').pop()
+    }).then(result => {
+        console.log(result, 'result');
+        cb(null, result.code, result.map);
+    })
+    .catch(err => {
+        cb(err)
+    });
+}
+```
