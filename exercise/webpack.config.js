@@ -2,7 +2,7 @@
  * @Author: wangyongqi@baidu.com 
  * @Date: 2020-12-15 17:03:44 
  * @Last Modified by: wangyongqi@baidu.com
- * @Last Modified time: 2020-12-16 16:41:02
+ * @Last Modified time: 2020-12-16 17:16:34
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -37,7 +37,10 @@ module.exports = {
             {
                 test: /\.(png|jpg|jpeg)$/,
                 use: {
-                    loader: 'file-loader'
+                    loader: 'url-loader',
+                    options: {
+                        limit: 200 * 1024
+                    }
                 }
             }
         ]
