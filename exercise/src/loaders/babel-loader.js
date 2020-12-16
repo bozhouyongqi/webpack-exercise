@@ -14,7 +14,6 @@ module.exports = function(content, map, mata) {
         sourceMap: true,
         filename: this.resourcePath.split('/').pop()
     }).then(result => {
-        console.log(result, 'result');
         cb(null, result.code, result.map);
     })
     .catch(err => {

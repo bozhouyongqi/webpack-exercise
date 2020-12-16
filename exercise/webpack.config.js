@@ -2,7 +2,7 @@
  * @Author: wangyongqi@baidu.com 
  * @Date: 2020-12-15 17:03:44 
  * @Last Modified by: wangyongqi@baidu.com
- * @Last Modified time: 2020-12-15 19:59:39
+ * @Last Modified time: 2020-12-16 16:41:02
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -32,6 +32,12 @@ module.exports = {
                             '@babel/preset-env' // 注意这里是presets选项，不是plugins选项
                         ]
                     }
+                }
+            },
+            {
+                test: /\.(png|jpg|jpeg)$/,
+                use: {
+                    loader: 'file-loader'
                 }
             }
         ]
