@@ -2,11 +2,12 @@
  * @Author: wangyongqi@baidu.com 
  * @Date: 2020-12-15 17:03:44 
  * @Last Modified by: wangyongqi@baidu.com
- * @Last Modified time: 2020-12-16 17:16:34
+ * @Last Modified time: 2020-12-18 17:44:54
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 清空打包目录的插件
+const FisrtPlugin = require('./src/plugins/firstPlugins');
 
 module.exports = {
     mode: 'development',
@@ -54,7 +55,8 @@ module.exports = {
                 removeAttributeQuotes: true // 压缩 去掉引号
             }
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new FisrtPlugin()
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
